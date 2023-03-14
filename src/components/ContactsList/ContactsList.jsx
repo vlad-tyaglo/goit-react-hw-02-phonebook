@@ -1,4 +1,5 @@
 import { ListContacts, ContactInfo, List } from "./ContactList.styled";
+import PropTypes from 'prop-types';
 
 export const ContactsList = ({deleteContact, getFilteredContacts}) => {
     const filteredContacts = getFilteredContacts();
@@ -11,3 +12,8 @@ export const ContactsList = ({deleteContact, getFilteredContacts}) => {
         </List>
     )
 }
+
+ContactsList.propTypes = {
+    deleteContact: PropTypes.func.isRequired,
+    getFilteredContacts: PropTypes.func.isRequired,
+  }
